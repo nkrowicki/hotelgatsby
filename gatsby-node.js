@@ -1,4 +1,5 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
+
     const resultado = await graphql(`
         query{
             allDatoCmsHabitacion {
@@ -22,8 +23,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             path: habitacion.slug,
             component: require.resolve('./src/components/HabitacionTemplate.js'),
             context: {
-                slug: habitacion.slug
-            }
+                slug: habitacion.slug            }
         })
     })
 }
